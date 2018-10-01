@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Guru Registration Form</title>
 </head>
-	<div align="center" style="vertical-align:bottom">
-<div align="center" style="vertical-align:bottom">
 <body>
 <h1>Guru Register Form</h1>
 <form action="guru_register" method="post">
