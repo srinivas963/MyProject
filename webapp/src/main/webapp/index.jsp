@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Guru Registration Form</title>
+
 </head>
 <body>
 <h1>Guru Register Form</h1>
@@ -35,8 +35,8 @@
 				<tr>
 					<td>Contact No</td>
 					<td><input type="text" name="contact" /></td>
-				</tr></table>
-			<input type="submit" value="Submit" /></form>
+				</tr>
+			<input type="submit" value="Submit" /></form></table>
 </body>
 </html> 
 
