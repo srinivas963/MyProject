@@ -38,7 +38,7 @@
 				</tr>
 			       <tr>
 				       <td>If Details True No</td>
-				       <td> <input type="submit" value="Submit" /></td> </tr>
+				       <td> <center><input type="submit" value="Submit" /> </center></td> </tr>
 	</form></table>
 </body>
 </html> 
