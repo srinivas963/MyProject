@@ -37,7 +37,7 @@
 					<td><input type="text" name="contact" /></td>
 				</tr>
 			       <tr>
-				       <td>If Details True No</td>
+				       <td>If Details True</td>
 				       <td> <center><input type="submit" value="Submit" /> </center></td> </tr>
 	</form></table>
 </body>
