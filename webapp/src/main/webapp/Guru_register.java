@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class guru_register
  */
-public class guru_register extends HttpServlet {
+public class Guru_register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
