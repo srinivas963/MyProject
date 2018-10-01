@@ -9,7 +9,9 @@
 <body>
 <h1>Guru Register Form</h1>
 <form action="Guru_register" method="post">
-			<table style="with: 50%">
+<center><h2 style="color:green">JSP Login Example</h2></center>
+<table border="1" align="center">
+			
 				<tr>
 					<td>First Name</td>
 					<td><input type="text" name="first_name" /></td>
