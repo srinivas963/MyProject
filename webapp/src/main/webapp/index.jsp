@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<h1>Guru Register Form</h1>
+	<center><h2 style="color:blue">Welcome to Harindra</h2></center>
 <form action="Guru_register" method="post">
 <center><h2 style="color:green">JSP Login Example</h2></center>
 <table border="1" align="center">
