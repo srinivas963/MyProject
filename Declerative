@@ -24,7 +24,7 @@
                  }
               stage('Deploy artifact')
               {
-                  sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.23.254:/var/lib/tomcat7/webapps/king.war'
+                  sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.9.178:/var/lib/tomcat7/webapps/king.war'
               }
               stage('Testing-Analysis')
               {
@@ -42,7 +42,7 @@
                      input message: 'Application ready to go Alive ', 
                      ok: 'Proceed to Continue', 
                      submitter: 'Harindra'
-                     sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.1.208:/var/lib/tomcat7/webapps/king.war'
+                     sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.11.169:/var/lib/tomcat7/webapps/king.war'
                  }
               
         } catch(err)
