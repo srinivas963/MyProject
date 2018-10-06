@@ -1,0 +1,53 @@
+ node{
+   
+    try 
+    {
+    
+              stage('checkout SCM') 
+                 {
+                cleanWs()
+                   checkout([$class: 'GitSCM', 
+                   branches: [[name: '*/master']], 
+                   doGenerateSubmoduleConfigurations: false, 
+                   extensions: [], 
+                   submoduleCfg: [], 
+                   userRemoteConfigs: [[credentialsId: '18d72b59-06af-427d-a0e0-8f5eb09cb156', 
+                   url: 'https://github.com/admin-2013/MyProject.git']]])
+                 }
+              stage('Artifact') 
+                 {
+                   sh 'mvn clean package'
+                 }
+              stage('Archive-Artifact') 
+                 {
+                   archive '**/*.war'
+                 }
+              stage('Deploy artifact')
+              {
+                  sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.23.254:/var/lib/tomcat7/webapps/king.war'
+              }
+              stage('Testing-Analysis')
+              {
+                  checkout([$class: 'GitSCM', 
+                  branches: [[name: '*/master']], 
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: [],
+                  submoduleCfg: [],
+                  userRemoteConfigs:
+                  [[credentialsId: '18d72b59-06af-427d-a0e0-8f5eb09cb156',
+                  url: 'https://github.com/admin-2013/Testing-code.git']]])
+              }
+               stage('Production-Server') 
+                 {
+                     input message: 'Application ready to go Alive ', 
+                     ok: 'Proceed to Continue', 
+                     submitter: 'Harindra'
+                     sh 'scp /var/lib/jenkins/workspace/Pipe-groovy/webapp/target/webapp.war ubuntu@172.31.1.208:/var/lib/tomcat7/webapps/king.war'
+                 }
+              
+        } catch(err)
+                {
+                  emailext body: "${err}", subject: 'Failure', to: 'harireddy090@gmail.com'
+                }
+                
+ }                
